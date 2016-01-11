@@ -24,64 +24,65 @@ pub struct WorldFile {
 }
 
 impl FromStr for WorldFile {
-    fn from_str(s: &str) -> Option<Self> {
+    type Err = ();
+    fn from_str(s: &str) -> Result<Self, ()> {
         let mut lines = s.lines_any();
 
         // size of pixel in x direction (x_scale)
         let x_scale: f64 = match lines.next() {
             Some(s) => match FromStr::from_str(s) {
-                Some(i) => i,
-                None => return None,
+                Ok(i) => i,
+                Err(_) => return Err(()),
             },
-            None => return None,
+            None => return Err(()),
         };
 
         // rotation term for row (y_skew)
         let y_skew: f64 = match lines.next() {
             Some(s) => match FromStr::from_str(s) {
-                Some(i) => i,
-                None => return None,
+                Ok(i) => i,
+                Err(_) => return Err(()),
             },
-            None => return None,
+            None => return Err(()),
         };
 
         // rotation term for column (x_skew)
         let x_skew: f64 = match lines.next() {
             Some(s) => match FromStr::from_str(s) {
-                Some(i) => i,
-                None => return None,
+                Ok(i) => i,
+                Err(_) => return Err(()),
             },
-            None => return None,
+            None => return Err(()),
         };
 
         // size of pixel in y direction (y_scale)
         let y_scale: f64 = match lines.next() {
             Some(s) => match FromStr::from_str(s) {
-                Some(i) => i,
-                None => return None,
+                Ok(i) => i,
+                Err(_) => return Err(()),
             },
-            None => return None,
+            None => return Err(()),
         };
 
         // x coordinate of centre of upper left pixel in map units (x_coord)
         let x_coord: f64 = match lines.next() {
             Some(s) => match FromStr::from_str(s) {
-                Some(i) => i,
-                None => return None,
+                Ok(i) => i,
+                Err(_) => return Err(()),
             },
-            None => return None,
+            None => return Err(()),
         };
 
         // y coordinate of centre of upper left pixel in map units (y_coord)
         let y_coord: f64 = match lines.next() {
             Some(s) => match FromStr::from_str(s) {
-                Some(i) => i,
-                None => return None,
+                Ok(i) => i,
+                Err(_) => return Err(()),
             },
-            None => return None,
+            None => return Err(()),
         };
 
-        Some(WorldFile {
+        Ok(WorldFile {
             x_scale: x_scale,
             y_skew: y_skew,
             x_skew: x_skew,
