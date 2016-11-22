@@ -12,6 +12,27 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+//! ```rust
+//! use world_file::WorldFile;
+//!
+//! let world_file_txt = "\
+//! 32.0
+//! 0.0
+//! 0.0
+//! -32.0
+//! 691200.0
+//! 4576000.0";
+//!
+//! let world_file: WorldFile = world_file_txt.parse().unwrap();
+//!
+//! assert_eq!(world_file.x_scale, 32.0);
+//! assert_eq!(world_file.y_skew, 0.0);
+//! assert_eq!(world_file.x_skew, 0.0);
+//! assert_eq!(world_file.y_scale, -32.0);
+//! assert_eq!(world_file.x_coord, 691200.0);
+//! assert_eq!(world_file.y_coord, 4576000.0);
+//! ```
+
 use std::str::FromStr;
 
 pub struct WorldFile {
