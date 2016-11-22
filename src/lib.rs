@@ -47,7 +47,7 @@ pub struct WorldFile {
 impl FromStr for WorldFile {
     type Err = ();
     fn from_str(s: &str) -> Result<Self, ()> {
-        let mut lines = s.lines_any();
+        let mut lines = s.lines();
 
         // size of pixel in x direction (x_scale)
         let x_scale: f64 = match lines.next() {
