@@ -15,12 +15,12 @@
 use std::str::FromStr;
 
 pub struct WorldFile {
-    x_scale: f64,
-    y_skew: f64,
-    x_skew: f64,
-    y_scale: f64,
-    x_coord: f64,
-    y_coord: f64,
+    pub x_scale: f64,
+    pub y_skew: f64,
+    pub x_skew: f64,
+    pub y_scale: f64,
+    pub x_coord: f64,
+    pub y_coord: f64,
 }
 
 impl FromStr for WorldFile {
