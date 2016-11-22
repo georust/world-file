@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#![no_std]
+
 //! ```rust
 //! use world_file::WorldFile;
 //!
@@ -33,7 +35,7 @@
 //! assert_eq!(world_file.y_coord, 4576000.0);
 //! ```
 
-use std::str::FromStr;
+use core::str::FromStr;
 
 pub struct WorldFile {
     pub x_scale: f64,
