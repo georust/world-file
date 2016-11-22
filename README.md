@@ -1,5 +1,7 @@
 # rust-world-file
 
+[Documentation](https://docs.rs/world-file/)
+
 Rust read/write support for [world files](https://en.wikipedia.org/wiki/World_file).
 
 ## License
