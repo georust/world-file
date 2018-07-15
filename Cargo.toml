@@ -5,4 +5,4 @@ description = "Rust read/write support for world files"
 version = "0.1.0"
 authors = ["Corey Farwell <coreyf@rwell.org>"]
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/georust/rust-world-file"
+repository = "https://github.com/georust/world-file"

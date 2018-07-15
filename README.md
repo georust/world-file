@@ -1,4 +1,4 @@
-# rust-world-file
+# world-file
 
 [Documentation](https://docs.rs/world-file/)
 
